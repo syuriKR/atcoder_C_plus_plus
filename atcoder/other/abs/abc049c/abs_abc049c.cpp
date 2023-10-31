@@ -13,5 +13,34 @@ template<class T>bool chmin(T& a, const T& b) { if (b < a) { a = b; return 1; } 
 // clang-format on
 
 int main() {
+    string s;
+    cin >> s;
+
+    vector<string> vec;
+    vec.push_back("dream");
+    vec.push_back("dreamer");
+    vec.push_back("erase");
+    vec.push_back("eraser");
+
+    reverse(s.begin(), s.end());
+    fore(a, vec) reverse(a.begin(), a.end());
+
+    while (s != "") {
+        bool matched = false;
+        fore(a, vec) {
+            if (s.find(a) == 0) {
+                int len = a.size();
+                s = s.substr(len);
+                matched = true;
+                break;
+            }
+        }
+        if (!(matched))
+            break;
+    }
+    if (s == "") {
+        cout << "YES" << endl;
+    } else
+        cout << "NO" << endl;
     return 0;
 }

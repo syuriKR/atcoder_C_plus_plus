@@ -13,5 +13,13 @@ template<class T>bool chmin(T& a, const T& b) { if (b < a) { a = b; return 1; } 
 // clang-format on
 
 int main() {
+    int n;
+    cin >> n;
+    vector<int> time(n);
+    vector<pair<int, int>> xy(n);
+    for (int i = 0; i < n; i++) {
+        fore(a, time) cin >> a;
+        fore(a, xy) cin >> a.first >> a.second;
+    }
     return 0;
 }
