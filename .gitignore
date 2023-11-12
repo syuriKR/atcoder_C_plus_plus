@@ -1,0 +1,7 @@
+# my
+out/
+data/
+.DS_Store
+tests/
+.out
+.in
