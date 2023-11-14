@@ -3,5 +3,5 @@ out/
 data/
 .DS_Store
 tests/
-.out
+*.out
 .in
