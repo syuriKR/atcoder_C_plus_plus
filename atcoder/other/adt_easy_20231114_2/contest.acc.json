@@ -1,0 +1,59 @@
+{
+  "contest": {
+    "id": "adt_easy_20231114_2",
+    "title": "AtCoder Daily Training EASY 2023/11/14 17:30start",
+    "url": "https://atcoder.jp/contests/adt_easy_20231114_2"
+  },
+  "tasks": [
+    {
+      "id": "abc213_a",
+      "label": "A",
+      "title": "Bitwise Exclusive Or",
+      "url": "https://atcoder.jp/contests/adt_easy_20231114_2/tasks/abc213_a",
+      "directory": {
+        "path": "a",
+        "testdir": "tests"
+      }
+    },
+    {
+      "id": "abc297_a",
+      "label": "B",
+      "title": "Double Click",
+      "url": "https://atcoder.jp/contests/adt_easy_20231114_2/tasks/abc297_a",
+      "directory": {
+        "path": "b",
+        "testdir": "tests"
+      }
+    },
+    {
+      "id": "abc241_b",
+      "label": "C",
+      "title": "Pasta",
+      "url": "https://atcoder.jp/contests/adt_easy_20231114_2/tasks/abc241_b",
+      "directory": {
+        "path": "c",
+        "testdir": "tests"
+      }
+    },
+    {
+      "id": "abc223_b",
+      "label": "D",
+      "title": "String Shifting",
+      "url": "https://atcoder.jp/contests/adt_easy_20231114_2/tasks/abc223_b",
+      "directory": {
+        "path": "d",
+        "testdir": "tests"
+      }
+    },
+    {
+      "id": "abc219_c",
+      "label": "E",
+      "title": "Neo-lexicographic Ordering",
+      "url": "https://atcoder.jp/contests/adt_easy_20231114_2/tasks/abc219_c",
+      "directory": {
+        "path": "e",
+        "testdir": "tests"
+      }
+    }
+  ]
+}
