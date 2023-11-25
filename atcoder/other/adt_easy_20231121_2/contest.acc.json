@@ -1,0 +1,59 @@
+{
+  "contest": {
+    "id": "adt_easy_20231121_2",
+    "title": "AtCoder Daily Training EASY 2023/11/21 17:30start",
+    "url": "https://atcoder.jp/contests/adt_easy_20231121_2"
+  },
+  "tasks": [
+    {
+      "id": "abc254_a",
+      "label": "A",
+      "title": "Last Two Digits",
+      "url": "https://atcoder.jp/contests/adt_easy_20231121_2/tasks/abc254_a",
+      "directory": {
+        "path": "a",
+        "testdir": "tests"
+      }
+    },
+    {
+      "id": "abc302_a",
+      "label": "B",
+      "title": "Attack",
+      "url": "https://atcoder.jp/contests/adt_easy_20231121_2/tasks/abc302_a",
+      "directory": {
+        "path": "b",
+        "testdir": "tests"
+      }
+    },
+    {
+      "id": "abc290_b",
+      "label": "C",
+      "title": "Qual B",
+      "url": "https://atcoder.jp/contests/adt_easy_20231121_2/tasks/abc290_b",
+      "directory": {
+        "path": "c",
+        "testdir": "tests"
+      }
+    },
+    {
+      "id": "abc232_b",
+      "label": "D",
+      "title": "Caesar Cipher",
+      "url": "https://atcoder.jp/contests/adt_easy_20231121_2/tasks/abc232_b",
+      "directory": {
+        "path": "d",
+        "testdir": "tests"
+      }
+    },
+    {
+      "id": "abc314_c",
+      "label": "E",
+      "title": "Rotate Colored Subsequence",
+      "url": "https://atcoder.jp/contests/adt_easy_20231121_2/tasks/abc314_c",
+      "directory": {
+        "path": "e",
+        "testdir": "tests"
+      }
+    }
+  ]
+}
