@@ -48,16 +48,9 @@ int main() {
     ll ans = 0;
 
     for (int i = 0; i < n; i++) {
-        if (row[i] < 2) {
-            continue;
-        }
-
         for (int j = 0; j < n; j++) {
-            for (int k = j + 1; k < n; k++) {
-                if (table[i][j] == 'o' && table[i][k] == 'o') {
-                    ans += column[j] - 1;
-                    ans += column[k] - 1;
-                }
+            if (table[i][j] == 'o') {
+                ans += (row[i] - 1) * (column[j] - 1);
             }
         }
     }
