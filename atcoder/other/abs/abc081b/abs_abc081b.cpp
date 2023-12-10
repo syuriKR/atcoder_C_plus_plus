@@ -13,5 +13,30 @@ template<class T>bool chmin(T& a, const T& b) { if (b < a) { a = b; return 1; } 
 // clang-format on
 
 int main() {
+    int n;
+    cin >> n;
+
+    vector<int> vec(n);
+    rep(i, 0, n) cin >> vec[i];
+
+    int ans = 0;
+    bool flag = true;
+    while (true) {
+        fore(a, vec) {
+            if (a % 2 == 0) {
+                a /= 2;
+            } else {
+                flag = false;
+                break;
+            }
+        }
+        if (flag) {
+            ans++;
+        } else {
+            break;
+        }
+    }
+
+    cout << ans << endl;
     return 0;
 }

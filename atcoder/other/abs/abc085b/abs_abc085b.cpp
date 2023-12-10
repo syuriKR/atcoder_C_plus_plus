@@ -13,5 +13,16 @@ template<class T>bool chmin(T& a, const T& b) { if (b < a) { a = b; return 1; } 
 // clang-format on
 
 int main() {
+    int n;
+    cin >> n;
+
+    set<int> set;
+    rep(i, 0, n) {
+        int d;
+        cin >> d;
+        set.insert(d);
+    }
+
+    cout << set.size() << endl;
     return 0;
 }

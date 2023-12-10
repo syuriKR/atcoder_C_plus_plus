@@ -13,5 +13,27 @@ template<class T>bool chmin(T& a, const T& b) { if (b < a) { a = b; return 1; } 
 // clang-format on
 
 int main() {
+    int n;
+    cin >> n;
+
+    vector<int> vec(n);
+
+    rep(i, 0, n) {
+        cin >> vec[i];
+    }
+
+    int alice = 0;
+    int bob = 0;
+
+    sort(vec.begin(), vec.end());
+    reverse(vec.begin(), vec.end());
+    for (int i = 0; i < n; i += 2) {
+        alice += vec[i];
+    }
+    for (int i = 1; i < n; i += 2) {
+        bob += vec[i];
+    }
+
+    cout << alice - bob << endl;
     return 0;
 }
