@@ -15,23 +15,26 @@ template<class T>bool chmin(T& a, const T& b) { if (b < a) { a = b; return 1; } 
 int main() {
     int n, k;
     cin >> n >> k;
-    vector<int> vec(k);
-    rep(i, 0, k) {
-        cin >> vec[i];
+    vector<int> a(k);
+    fore(i, a) cin >> i;
+    // 0番目からk番目までの配列
+    vector<int> pre(k + 1), suf(k + 1);
+
+    for (int i = 1; i <= k; i++) {
+        pre[i] = pre[i - 1];
+        if (i % 2 == 0)
+            pre[i] += a[i - 1] - a[i - 2];
     }
 
-    ll ans, diff;
-
-        if (k % 2 == 0) {
-        for (int i = 0; i < k - 1; i += 2) {
-            ans += vec[i + 1] - vec[i];
-        }
+    for (int i = k - 1; i >= 0; i--) {
+        suf[i] = suf[i + 1];
+        if ((k - i) % 2 == 0)
+            suf[i] += a[i + 1] - a[i];
     }
-    else {
-        for (int i = 0; i < k; i++) {
-            if (int i = 0) {
-            }
-        }
+
+    int ans = 1e9;
+    for (int i = 0; i <= k; i += 2) {
+        ans = min(ans, pre[i] + suf[i]);
     }
     cout << ans << endl;
     return 0;

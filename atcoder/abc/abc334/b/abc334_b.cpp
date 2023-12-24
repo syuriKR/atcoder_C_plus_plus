@@ -12,25 +12,17 @@ template<class T>bool chmax(T& a, const T& b) { if (a < b) { a = b; return 1; } 
 template<class T>bool chmin(T& a, const T& b) { if (b < a) { a = b; return 1; } return 0; }
 // clang-format on
 
+ll floor(ll x, ll m) {
+    ll r = (x % m + m) % m;
+    cout << r << endl;
+    return (x - r) / m;
+}
+
 int main() {
     ll a, m, l, r;
     cin >> a >> m >> l >> r;
 
-    // AからRまでのツリーの本数(Aを含めない)
-    ll right = (r - a) / m;
-    // AからLまでのツリーの本数(Aを含めない)
-    ll left = (l - a) / m;
-    ll ans = right - left;
-    
-    if (a < l) {
-        if ((l - a) % m == 0) {
-            ans++;
-        }
-    }
-
-    if (l < a && a < r)
-        ans++;
-
-    cout << ans << endl;
+    l -=a; r-=a;
+    cout << floor(r,m) - floor(l-1,m) << endl;
     return 0;
 }
