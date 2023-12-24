@@ -25,16 +25,16 @@ int main() {
     ll n;
     cin >> n;
 
-    vector<ll> vec(350);
-    rep(i, 1, 19) {
+    vector<ll> vec(20);
+    rep(i, 1, 13) {
         vec[i] = calculate_repunit(i);
     }
 
     set<ll> set;
 
-    rep(i, 1, 19) {
-        rep(j, i, 19) {
-            rep(k, j, 19) {
+    rep(i, 1, 13) {
+        rep(j, i, 13) {
+            rep(k, j, 13) {
                 ll sum = vec[i] + vec[j] + vec[k];
                 set.insert(sum);
             }
