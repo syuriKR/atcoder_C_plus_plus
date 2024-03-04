@@ -17,6 +17,31 @@ int main() {
     cin >> n;
     vector<int> vec(n);
     rep(i, 0, n) cin >> vec[i];
-    
+
+    vector<int> max_left(n);
+    vector<int> max_right(n);
+
+    for (int i = 0; i < n; i++) {
+        if (i == 0) {
+            max_left[i] = 1;
+        } else {
+            max_left[i] = min(max_left[i - 1] + 1, vec[i]);
+        }
+    }
+
+    for (int i = n - 1; 0 <= i; i--) {
+        if (i == n - 1) {
+            max_right[i] = 1;
+        } else {
+            max_right[i] = min(max_right[i + 1] + 1, vec[i]);
+        }
+    }
+
+    int ans = 0;
+    for (int i = 0; i < n; i++) {
+        int now_ans = min(max_left[i], max_right[i]);
+        ans = max(ans, now_ans);
+    }
+    cout << ans << endl;
     return 0;
 }
