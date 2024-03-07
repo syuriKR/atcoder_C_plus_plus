@@ -13,5 +13,52 @@ template<class T>bool chmin(T& a, const T& b) { if (b < a) { a = b; return 1; } 
 // clang-format on
 
 int main() {
+    int h, w, k;
+    cin >> h >> w >> k;
+    int x[200001], d[200001];
+    char glid[h][w];
+    for (int i = 0; i < h; i++) {
+        for (int j = 0; j < w; j++) {
+            cin >> glid[i][j];
+        }
+    }
+
+    int ans = 1e9;
+    for (int i = 0; i < h; i++) {
+        for (int j = 0; j < w; j++) {
+            x[j + 1] = x[j];
+            d[j + 1] = d[j];
+            if (glid[i][j] == 'x')
+                x[j + 1]++;
+            if (glid[i][j] == '.')
+                d[j + 1]++;
+        }
+        for (int i = 0; i < w - k + 1; i++) {
+            if (x[i + k] - x[i] == 0) {
+                ans = min(ans, d[i + k] - d[i]);
+            }
+        }
+    }
+
+    for (int i = 0; i < w; i++) {
+        for (int j = 0; j < h; j++) {
+            x[j + 1] = x[j];
+            d[j + 1] = d[j];
+            if (glid[j][i] == 'x')
+                x[j + 1]++;
+            if (glid[j][i] == '.')
+                d[j + 1]++;
+        }
+        for (int i = 0; i < h - k + 1; i++) {
+            if (x[i + k] - x[i] == 0) {
+                ans = min(ans, d[i + k] - d[i]);
+            }
+        }
+    }
+
+    if (ans > k)
+        ans = -1;
+    cout << ans << endl;
+
     return 0;
 }
