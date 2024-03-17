@@ -41,6 +41,7 @@ int main() {
             ans[i] = s;
         }
     }
-    for(auto x:ans)cout << x << ' ';
+    for (auto x : ans)
+        cout << x << ' ';
     return 0;
 }
