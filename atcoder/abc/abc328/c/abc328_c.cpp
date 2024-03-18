@@ -12,20 +12,28 @@ template<class T>bool chmax(T& a, const T& b) { if (a < b) { a = b; return 1; } 
 template<class T>bool chmin(T& a, const T& b) { if (b < a) { a = b; return 1; } return 0; }
 // clang-format on
 
-// 配列にvecのiにその文字までで直前の文字までと一致してきた数を記録、rとlの値を参照して引き算。
 int main() {
-    string n;
-    int q;
+    int n, q;
     cin >> n >> q;
 
-    vector<bool> vec;
-    for (int i = 0; i < n.size(); i++)
-        vec[i] = false;
+    string s;
+    cin >> s;
 
-    for (int i = 1; i < n.size(); i++) {
-        if (n[i - 1] == n[i]) {
-            vec[i] = true;
+    vector<int> vec(n + 1);
+    vec[0] = 0;
+    vec[1] = 0;
+    for (int i = 2; i <= n; i++) {
+        if (s[i - 2] == s[i - 1]) {
+            vec[i] = vec[i - 1] + 1;
+        } else {
+            vec[i] = vec[i - 1];
         }
+    }
+    for (int i = 0; i < q; i++) {
+        int l, r;
+        cin >> l >> r;
+
+        cout << vec[r] - vec[l] << endl;
     }
 
     return 0;

@@ -13,5 +13,17 @@ template<class T>bool chmin(T& a, const T& b) { if (b < a) { a = b; return 1; } 
 // clang-format on
 
 int main() {
+    string s;
+    cin >> s;
+
+    string ans;
+
+    fore(a, s) {
+        ans += a;
+        if (ans.size() >= 3 && ans.substr(ans.size() - 3) == "ABC") {
+            ans.erase(ans.end() - 3, ans.end());
+        }
+    }
+    cout << ans << endl;
     return 0;
 }
