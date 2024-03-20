@@ -13,24 +13,47 @@ template<class T>bool chmin(T& a, const T& b) { if (b < a) { a = b; return 1; } 
 // clang-format on
 
 int main() {
-    string t;
-    cin >> t;
-
-    int n;
-    cin >> n;
-
-    int dp[101][101];
-    dp[0][0] = 0;
-
-    for (int i = 0; i < 101; i++) {
-        for (int j = 0; j < 101; j++) {
-            dp[i][j] = INT_MAX;
+    int dp[105][105];
+    for (int i = 0; i < 105; i++) {
+        for (int j = 0; j < 105; j++) {
+            dp[i][j] = 1e9;
         }
     }
+    dp[0][0] = 0;
 
-    // n個の袋
+    string t;
+    cin >> t;
+    int tl = t.size();
+    int n;
+    cin >> n;
     for (int i = 0; i < n; i++) {
-        
+        for (int j = 0; j < 105; j++) {
+            dp[i + 1][j] = dp[i][j];
+        }
+        int m;
+        cin >> m;
+        while (m > 0) {
+            m--;
+            string s;
+            cin >> s;
+            int sl = s.size();
+            for (int j = 0; j + sl <= tl; j++) {
+                bool ok = true;
+                for (int k = 0; k < sl; k++) {
+                    if (t[j + k] != s[k]) {
+                        ok = false;
+                        break;
+                    }
+                }
+                if (ok) {
+                    dp[i + 1][j + sl] = min(dp[i + 1][j + sl], dp[i][j] + 1);
+                }
+            }
+        }
     }
+    if (dp[n][tl] > 5e8) {
+        dp[n][tl] = -1;
+    }
+    cout << dp[n][tl] << "\n";
     return 0;
 }
